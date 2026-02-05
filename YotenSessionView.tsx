@@ -1,18 +1,12 @@
 import React from "react";
 import { View, ActivityIndicator, StyleSheet } from "react-native";
 import { WebView } from "react-native-webview";
-
-type Props = {
-  route: {
-    params: {
-      url: string;
-    };
-  };
-};
+import { useRoute } from "@react-navigation/native";
 
 //Injected js for "fake" dark mode
 
-export const useYotenStudySession = ({ route }) => {
+export const YotenSessionView = () => {
+  const route = useRoute();
   const { url } = route.params;
 
   return (
